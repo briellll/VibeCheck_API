@@ -1,104 +1,102 @@
-🌡️ VibeCheck API (Bizu do Boto)
-Seu termômetro de sentimentos para textos em português, com uma pitada de IA direto da Amazônia.
+# 🌡️ VibeCheck API (Bizu do Boto)  
+**Seu termômetro de sentimentos para textos em português, com uma pitada de IA direto da Amazônia.**
 
-🎯 Sobre o Projeto
-O VibeCheck API é um microsserviço inteligente construído com FastAPI que analisa o sentimento de qualquer texto em português. Chega de usar modelos de IA "gringos" que não entendem o que significa um "açaí pai d'égua"!
+---
 
-Este projeto utiliza um poderoso modelo de linguagem multilíngue da Hugging Face para fornecer uma análise de sentimento precisa, classificando textos como positivo, negativo ou neutro. É a ferramenta perfeita para entender o feedback de clientes, analisar comentários em redes sociais ou simplesmente saber se aquela mensagem no grupo era um elogio ou puro sarcasmo.
+## 🎯 Sobre o Projeto
 
-✨ Funcionalidades
-✅ Análise de sentimento de alta precisão em Português (e outras línguas!).
+O **VibeCheck API** é um microsserviço esperto, construído com **FastAPI**, que analisa o sentimento de qualquer texto em português — do meme ao manifesto.  
+Chega de IA gringa que trava no "açaí pai d’égua"! Aqui a vibe é tropical, com IA multilíngue da Hugging Face na jugular.
 
-✅ Classificação clara em "positivo", "negativo" e "neutro".
+Use para analisar feedback de clientes, comentários em redes sociais ou descobrir se aquela mensagem no grupo foi carinho ou caos passivo-agressivo.
 
-✅ Retorna a pontuação de confiança (polaridade) do modelo de IA.
+---
 
-✅ Construído com uma arquitetura moderna e escalável usando FastAPI.
+## ✨ Funcionalidades
 
-✅ Validação de dados de entrada e saída com Pydantic.
+- ✅ Análise de sentimento com alta precisão em **português** (e outras línguas!).
+- ✅ Classificação em: `"positivo"`, `"negativo"` ou `"neutro"`.
+- ✅ Retorno da **pontuação de polaridade/confiança** do modelo.
+- ✅ Arquitetura moderna, assíncrona e escalável com **FastAPI**.
+- ✅ **Validação de dados** com Pydantic.
+- ✅ Documentação automática via **Swagger UI** (`/docs`) e **ReDoc** (`/redoc`).
 
-✅ Documentação interativa e automática com Swagger UI (/docs) e ReDoc (/redoc).
+---
 
-🛠️ Tecnologias Utilizadas
-Esta API foi construída com as melhores ferramentas do ecossistema Python:
+## 🛠️ Tecnologias Utilizadas
 
-🐍 Python 3.13
+| Ferramenta        | Função                                             |
+|-------------------|----------------------------------------------------|
+| 🐍 Python 3.13     | Linguagem base                                     |
+| ⚡ FastAPI + Uvicorn | Web framework assíncrono & servidor leve         |
+| 🤗 Transformers   | Modelos de IA multilíngue (Hugging Face)           |
+| 🔥 PyTorch        | Backbone matemático da IA                          |
+| 📦 Poetry         | Gerenciamento de dependências & ambiente virtual   |
+| 🧪 Pytest         | Testes para dormir tranquilo 😌                    |
 
-✨ FastAPI & Uvicorn: Para a construção da API assíncrona de alta performance.
+---
 
-🤗 transformers (Hugging Face): A ponte para o universo dos modelos de IA de última geração.
+## 🚀 Como Rodar o Projeto
 
-🔥 PyTorch: O motor V12 que faz os cálculos pesados da nossa IA.
+### ⚙️ Pré-requisitos
 
-📦 Poetry: Para gerenciamento de dependências e do ambiente virtual.
+- Python **3.13+**
+- [Poetry](https://python-poetry.org/docs/#installation)
 
-🧪 Pytest: Para garantir que nossa API seja robusta e à prova de balas.
+### 📥 Instalação
 
-🚀 Como Rodar o Projeto
-Para ter o VibeCheck API rodando na sua máquina local, siga estes simples passos.
-
-Pré-requisitos
-Ter o Python 3.13+ instalado.
-
-Ter o Poetry instalado.
-
-Instalação
-Clone o repositório:
-
-Bash
-
+```bash
 git clone https://github.com/seu-usuario/vibecheck-api.git
-Navegue até a pasta do projeto:
-
-Bash
-
 cd vibecheck-api
-Instale as dependências com o Poetry:
-(O Poetry criará um ambiente virtual e instalará tudo o que é necessário)
-
-Bash
-
 poetry install
-Inicie o servidor da API:
+```
 
-Bash
+### ▶️ Rodando o Servidor
 
+```bash
 poetry run uvicorn vibecheck_api.main:app --reload
-⚠️ AVISO IMPORTANTE!
-Na primeira vez que você iniciar o servidor, a biblioteca transformers irá baixar o modelo de IA (nlptown/bert-base-multilingual-uncased-sentiment), que tem cerca de 500MB. Isso pode demorar alguns minutos dependendo da sua conexão. Isso só acontece uma vez! Tenha um pouco de paciência e um açaí na mão.
+```
 
-Pronto! Sua API de IA já está no ar. Abra seu navegador e acesse:
+> ⚠️ **IMPORTANTE:**  
+Na primeira execução, será feito o download (~500MB) do modelo `nlptown/bert-base-multilingual-uncased-sentiment`.  
+Então relaxa, pega um açaí e deixa que o boto cuida.
 
-Documentação Interativa (Swagger): http://127.0.0.1:8000/docs
+---
 
-🕹️ Como Usar a API
-A maneira mais fácil de testar é usando a documentação interativa (/docs), onde você pode escrever o texto e ver a mágica acontecer.
+## 📚 Documentação Interativa
 
-Para usar via linha de comando (com curl):
+- Swagger: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
+- ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
-Bash
+---
 
-curl -X 'POST' \
-  'http://127.0.0.1:8000/analisar-sentimento' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "texto": "Esse açaí com peixe frito tava pai d'\''égua demais!"
+## 🕹️ Exemplo de Uso via `curl`
+
+```bash
+curl -X 'POST'   'http://127.0.0.1:8000/analisar-sentimento'   -H 'accept: application/json'   -H 'Content-Type: application/json'   -d '{
+    "texto": "Esse açaí com peixe frito tava pai d'''égua demais!"
 }'
-Estrutura da Resposta
-A API retornará um JSON claro e direto com a análise:
+```
 
-JSON
+### 🔄 Resposta da API
 
+```json
 {
   "sentimento": "positivo",
   "polaridade": 0.9825,
   "subjetividade": 0.0
 }
-🧪 Como Rodar os Testes
-Para garantir que tudo está funcionando como deveria, execute a suíte de testes:
+```
 
-Bash
+---
 
+## 🧪 Rodando os Testes
+
+```bash
 poetry run pytest
-Feito nas madrugadas regadas a café e ao som dos grilos de Santarém-PA, Brasil. 🇧🇷
+```
+
+---
+
+### 🎶 Rodado nas madrugadas amazônicas,  
+com café, código e o som dos grilos de Santarém-PA. 🇧🇷
