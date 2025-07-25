@@ -46,7 +46,7 @@ Use para analisar feedback de clientes, comentários em redes sociais ou descobr
 ### 📥 Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/vibecheck-api.git
+git clone https://github.com/briellll/vibecheck-api.git
 cd vibecheck-api
 poetry install
 ```
@@ -84,7 +84,6 @@ curl -X 'POST'   'http://127.0.0.1:8000/analisar-sentimento'   -H 'accept: appli
 {
   "sentimento": "positivo",
   "polaridade": 0.9825,
-  "subjetividade": 0.0
 }
 ```
 
