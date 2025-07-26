@@ -2,7 +2,8 @@ from http import HTTPStatus
 
 from fastapi import FastAPI
 
-from .core import analyze
+from vibecheck_api import core
+
 from .schemas import ResultAnalysis, TextForAnalysis
 
 app = FastAPI()
@@ -16,6 +17,6 @@ app = FastAPI()
 def analyze_sentiment(text: TextForAnalysis):
     sentiment_text = text.text
 
-    sentiment = analyze(sentiment_text)
+    sentiment = core.analyze(sentiment_text)
 
     return sentiment

@@ -8,3 +8,4 @@ class TextForAnalysis(BaseModel):
 class ResultAnalysis(BaseModel):
     emotion: str
     polarity: float
+    confidence: float
